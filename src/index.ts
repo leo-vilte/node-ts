@@ -25,18 +25,16 @@ console.log("fsds2222");
   async function getUsers() {
     try {
       // 👇️ const response: Response
-      const response = await fetch('https://api.decrypto.la/swagger-ui.html', {
-        method: 'GET',
+      const response = await fetch('https://api.decrypto.la/1.0/derivatives/prices', {
+        method: 'OPTIONS',
         headers: {
-          Accept: 'application/xml'
+          Accept: 'application/json'
         },
       });
   
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
       }
-
-      console.log(response);
   
       // 👇️ const result: GetUsersResponse
       const result = (await response.json());
