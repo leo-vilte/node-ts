@@ -10,6 +10,8 @@ console.log("fsds2222");
 
   const axiosConfig = {
     Cookie: "",
+    xsrfCookieName: '', // default
+    xsrfHeaderName: '', // default
     headers: {
       Accept: 'application/xml',
       'Content-Type': undefined,
