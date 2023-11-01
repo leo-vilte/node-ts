@@ -16,10 +16,11 @@ console.log("fsds2222");
       Accept: 'application/json',
       'Accept-Encoding': 'gzip, deflate, br',
       'Content-Type': undefined,
+      'Connection': 'close'
     },
   };
   export const getDecrypto = (): any => {
-    const url = 'https://desa-public.decrypto.la:8081/1.0/derivatives/prices';
+    const url = 'https://api.decrypto.la/1.0/derivatives/prices';
     return  axios.get(url, axiosConfig).then(async (response) => {
         console.log(response);
     });
