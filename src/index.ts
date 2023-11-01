@@ -28,7 +28,9 @@ console.log("fsds2222");
       const response = await fetch('https://preprod-public.decrypto.la:8081/1.0/derivatives/prices', {
         method: 'GET',
         headers: {
-          Accept: 'application/json'
+          Accept: 'application/json',
+          'User-Agent': 'whatever',
+          'Referer': 'http://localhost/',
         },
       });
   
