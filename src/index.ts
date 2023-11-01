@@ -29,6 +29,7 @@ console.log("fsds2222");
         method: 'GET',
         headers: {
           Accept: 'application/json',
+          'Authorization': 'Basic '+btoa('username:password'), 
         },
       });
   
