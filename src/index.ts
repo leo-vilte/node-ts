@@ -9,6 +9,7 @@ console.log("fsds2222");
 
 
   const axiosConfig = {
+    Cookie: "",
     headers: {
       Accept: 'application/xml',
       'Content-Type': undefined,
@@ -16,11 +17,22 @@ console.log("fsds2222");
   };
   export const getDecrypto = (): any => {
     const url = 'https://api.decrypto.la/1.0/derivatives/prices';
-    return  axios(url, {
-        method: 'GET',
-        withCredentials: false
-      }).then(async (response) => {
+    return  axios.get(url, axiosConfig).then(async (response) => {
         console.log(response);
+      return await new Promise((resolve, reject) => {
+        const parser = new xml2js.Parser();
+        parser.parseString(response.data, (err, result) => {
+          if (err) {
+            reject(err);
+          } else {
+            const prices = result.GetPriceBalanceResponseDto;
+            resolve({
+              compra: prices.highestLongPrice[0],
+              venta: prices.lowestShortPrice[0],
+            });
+          }
+        });
+      });
     });
   };
 
