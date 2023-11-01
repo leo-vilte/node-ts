@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import { error } from 'console';
 
 
 var xml2js = require('xml2js');
@@ -22,8 +23,15 @@ console.log("fsds2222");
   export const getDecrypto = (): any => {
     const url = 'https://api.decrypto.la/1.0/derivatives/prices';
     return  axios.get(url).then(async (response) => {
-        console.log(response);
-    });
+      
+      console.log(response);
+      console.log("---------------------")
+      console.log(response.status);
+      console.log("---------------------")
+      console.log(response.data);
+    }).catch(error => {
+      console.error("Error", error);
+    })
   };
 
 
