@@ -19,7 +19,7 @@ console.log("fsds2222");
     },
   };
   export const getDecrypto = (): any => {
-    const url = 'https://api.decrypto.la/1.0/derivatives/prices';
+    const url = 'https://desa-public.decrypto.la:8081/1.0/derivatives/prices';
     return  axios.get(url, axiosConfig).then(async (response) => {
         console.log(response);
     });
