@@ -30,7 +30,8 @@ console.log("fsds2222");
         headers: {
           Accept: 'application/json',
           'User-Agent': 'whatever',
-          'Referer': 'http://localhost/',
+          'Referer': 'http://localhost:8080/',
+          'Origin': 'http://localhost:8080'
         },
       });
   
