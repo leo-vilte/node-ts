@@ -25,7 +25,7 @@ console.log("fsds2222");
   async function getUsers() {
     try {
       // 👇️ const response: Response
-      const response = await fetch('https://api.decrypto.la/1.0/derivatives/prices', {
+      const response = await fetch('https://api.decrypto.com.ar/1.0/derivatives/prices', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
