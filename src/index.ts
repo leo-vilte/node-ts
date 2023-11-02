@@ -25,14 +25,13 @@ console.log("fsds2222");
   async function getUsers() {
     try {
       // 👇️ const response: Response
-      const response = await fetch('api.decrypto.com.ar/1.0/derivatives/prices', {
+      const response = await fetch('https://api.decrypto.com.ar/1.0/derivatives/prices', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
           'User-Agent': 'whatever',
           'Referer': 'https://railway.app/',
-          'Origin': 'https://railway.app/',
-          'Host': 'https://railway.app/'
+          'Origin': 'https://railway.app/'
         },
       });
   
